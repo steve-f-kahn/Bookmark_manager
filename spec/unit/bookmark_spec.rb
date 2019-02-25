@@ -3,7 +3,10 @@ require 'bookmark'
 describe Bookmark do
 
   it "Returns a list of all bookmarks with .all" do
-    bookmark = Bookmark.new
-    expect(bookmark.all).to eq ["www.bbc.co.uk", "www.github.co.uk"]
+    bookmarks = Bookmark.all
+
+    expect(bookmarks).to include "http://www.bbc.co.uk"
+    expect(bookmarks).to include "http://www.twitter.com"
+    expect(bookmarks).to include "http://www.google.com"
   end
 end
