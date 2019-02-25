@@ -1,10 +1,9 @@
 require 'bookmark'
 
-descirbe Bookmark do
-  let(bbc){double "www.bbc.co.uk"}
-  let(github){double "www.github.co.uk"}
+describe Bookmark do
+
   it "Returns a list of all bookmarks with .all" do
-    bookmark = Boomark.new
-    expect(bookmark.all).to eq [bbc, github]
+    bookmark = Bookmark.new
+    expect(bookmark.all).to eq ["www.bbc.co.uk", "www.github.co.uk"]
   end
 end
