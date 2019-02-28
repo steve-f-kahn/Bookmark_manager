@@ -1,7 +1,8 @@
 feature "List bookmarks" do
-  scenario "Clicks a button and shows a list of bookmarks" do
+  scenario "Has 3 default titles on Homepage" do
     visit '/'
-    click_button("list")
-    expect(page).to have_content("A list of bookmarks:")
+    expect(page).to have_content("BBC")
+    expect(page).to have_content("Twitter")
+    expect(page).to have_content("Google")
   end
 end

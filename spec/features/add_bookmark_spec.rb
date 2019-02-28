@@ -1,10 +1,10 @@
-feature "Add a bookamerk" do
+feature "Add a bookmark" do
   scenario "Add twitch.tv to my list of bookmarks" do
     visit '/'
     click_button("Add Bookmark")
     fill_in("url", with: "twitch.tv")
+    fill_in("title", with: "Twitch")
     click_button("Add")
-    click_button("list")
-    expect(page).to have_content "twitch.tv"
+    expect(page).to have_content "Twitch"
   end
 end

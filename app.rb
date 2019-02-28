@@ -3,6 +3,7 @@ require './lib/bookmark'
 class Bookmark_manager < Sinatra::Base
   enable :sessions
   get '/' do
+    @titles = Bookmark.titles
     erb :index
   end
   get '/add_bookmark' do
@@ -14,7 +15,7 @@ class Bookmark_manager < Sinatra::Base
   end
 
   post '/add_bookmark' do
-    Bookmark.new(params[:url])
+    Bookmark.new(params[:url], params[:title])
     redirect '/'
   end
   run! if app_file == $0

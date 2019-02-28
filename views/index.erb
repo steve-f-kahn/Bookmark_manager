@@ -2,9 +2,11 @@
   <h1> Bookmark Manager </h1>
 </div>
   <div>
-    <form class="List_button" action="/bookmarks" method="get">
-      <input type="submit" name="List Bookmarks" value="list">
-    </form>
+    <ul>
+      <% @titles.each do |title| %>
+        <li><%= title %></li>
+      <% end %>
+    </ul>
     <form class="" action="/add_bookmark" method="get">
       <input type="submit" name="Add Bookmark" value="Add Bookmark">
     </form>

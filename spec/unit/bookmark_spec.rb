@@ -11,7 +11,7 @@ describe Bookmark do
   end
 
   it "Adds a bookmark to the test database when created" do
-    Bookmark.new('twitch.tv')
+    Bookmark.new('twitch.tv', 'Twitch')
     bookmarks = Bookmark.all
 
     expect(bookmarks).to include "twitch.tv"
