@@ -2,6 +2,7 @@
   <h1> Bookmark Manager </h1>
 </div>
   <div>
+
     <ul>
       <% @titles.each do |title| %>
       <form class="" action="/bookmark" method="post"
@@ -10,7 +11,13 @@
       </form>
       <% end %>
     </ul>
+
     <form class="" action="/add_bookmark" method="get">
       <input type="submit" name="Add Bookmark" value="Add Bookmark">
     </form>
-  </div>
+
+    <form class="" action="/remove_bookmark" method="get">
+      <input type="submit" name="Remove" value="Remove">
+    </form>
+
+</div>

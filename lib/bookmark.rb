@@ -22,8 +22,13 @@ class Bookmark
 
   def self.select(title)
     result = Bookmark.connect.exec("SELECT url FROM bookmarks WHERE title = '#{title}';")
-    output = result[0]['url']
 
+    fail "Bookmark not found" if result.ntuples == 0
+    output = result[0]['url']
+  end
+
+  def self.remove(title)
+    Bookmark.connect.exec("DELETE FROM bookmarks WHERE title = '#{title}';")
   end
   def initialize(url, title)
     result = Bookmark.connect.exec("INSERT INTO bookmarks VALUES(DEFAULT, '#{url}', '#{title}')")

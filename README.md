@@ -14,3 +14,7 @@ I would like to see a list of bookmarks
 As a user,
 So that I can have a link to my favourite sites
 I want to add a bookmark
+
+As a user,
+So nobody knows that I ever used bing
+I want to delete a bookmark 

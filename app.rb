@@ -6,8 +6,20 @@ class Bookmark_manager < Sinatra::Base
     @titles = Bookmark.titles
     erb :index
   end
+
   get '/add_bookmark' do
     erb :add_bookmark
+  end
+
+  get '/remove_bookmark' do
+    @titles = Bookmark.titles
+    erb :remove_bookmark
+  end
+
+  post '/remove_bookmark' do
+    p params[:title]
+    Bookmark.remove(params[:title])
+    redirect '/'
   end
   post '/bookmark' do
     @url = Bookmark.select(params[:title])

@@ -1,0 +1,8 @@
+<ul>
+  <% @titles.each do |title| %>
+  <form class="" action="/remove_bookmark" method="post"
+    <data value="<% title %> "></data>
+    <input type="submit" name="title" " value="<%= title %>">
+  </form>
+  <% end %>
+</ul>
