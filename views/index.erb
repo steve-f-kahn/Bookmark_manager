@@ -4,7 +4,10 @@
   <div>
     <ul>
       <% @titles.each do |title| %>
-        <li><%= title %></li>
+      <form class="" action="/bookmark" method="post"
+        <data value="<% title %> "></data>
+        <input type="submit" name="title" " value="<%= title %>">
+      </form>
       <% end %>
     </ul>
     <form class="" action="/add_bookmark" method="get">

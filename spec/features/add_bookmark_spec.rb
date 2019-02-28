@@ -5,6 +5,6 @@ feature "Add a bookmark" do
     fill_in("url", with: "twitch.tv")
     fill_in("title", with: "Twitch")
     click_button("Add")
-    expect(page).to have_content "Twitch"
+    find_button("Twitch")
   end
 end

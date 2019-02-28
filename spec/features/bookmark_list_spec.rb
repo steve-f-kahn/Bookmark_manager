@@ -1,8 +1,7 @@
 feature "List bookmarks" do
-  scenario "Has 3 default titles on Homepage" do
+  scenario "Click on a bookmark of Google and be shown 'http://www.google.com'" do
     visit '/'
-    expect(page).to have_content("BBC")
-    expect(page).to have_content("Twitter")
-    expect(page).to have_content("Google")
+    click_button("Google")
+    expect(page).to have_content('http://www.google.com')
   end
 end

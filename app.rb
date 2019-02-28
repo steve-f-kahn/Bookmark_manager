@@ -9,8 +9,8 @@ class Bookmark_manager < Sinatra::Base
   get '/add_bookmark' do
     erb :add_bookmark
   end
-  get '/bookmarks' do
-    @bookmarks = Bookmark.all
+  post '/bookmark' do
+    @url = Bookmark.select(params[:title])
     erb :list
   end
 

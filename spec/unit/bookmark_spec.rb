@@ -16,4 +16,8 @@ describe Bookmark do
 
     expect(bookmarks).to include "twitch.tv"
   end
+
+  it "Returns a url of the title" do
+    expect(Bookmark.select('BBC')).to eq 'http://www.bbc.co.uk'
+  end
 end

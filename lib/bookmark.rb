@@ -20,6 +20,11 @@ class Bookmark
     result.map { |bookmark| bookmark['title'] }
   end
 
+  def self.select(title)
+    result = Bookmark.connect.exec("SELECT url FROM bookmarks WHERE title = '#{title}';")
+    output = result[0]['url']
+
+  end
   def initialize(url, title)
     result = Bookmark.connect.exec("INSERT INTO bookmarks VALUES(DEFAULT, '#{url}', '#{title}')")
   end
