@@ -9,4 +9,11 @@ describe Bookmark do
     expect(bookmarks).to include "http://www.twitter.com"
     expect(bookmarks).to include "http://www.google.com"
   end
+
+  it "Adds a bookmark to the test database when created" do
+    Bookmark.new('twitch.tv')
+    bookmarks = Bookmark.all
+
+    expect(bookmarks).to include "twitch.tv"
+  end
 end
