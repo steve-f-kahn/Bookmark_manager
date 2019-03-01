@@ -1,5 +1,3 @@
-require 'database_connection'
-
 class Database
 
   def self.name
