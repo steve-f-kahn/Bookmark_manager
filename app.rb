@@ -1,8 +1,11 @@
 require 'sinatra/base'
 require './lib/bookmark'
+require './lib/database_connection'
+require './lib/database'
 class Bookmark_manager < Sinatra::Base
   enable :sessions
   enable :method_override
+  DatabaseConnection.setup(Database.name)
   get '/' do
     @titles = Bookmark.titles
     erb :index
