@@ -17,4 +17,8 @@ I want to add a bookmark
 
 As a user,
 So nobody knows that I ever used bing
-I want to delete a bookmark 
+I want to delete a bookmark
+
+As a user,
+So I can change the name and title of my bookmark
+I want to update my bookmark

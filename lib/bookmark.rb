@@ -30,6 +30,10 @@ class Bookmark
   def self.remove(title)
     Bookmark.connect.exec("DELETE FROM bookmarks WHERE title = '#{title}';")
   end
+
+  def self.update(new_url, new_title, old_title)
+    Bookmark.connect.exec("UPDATE bookmarks SET url = '#{new_url}', title = '#{new_title}' WHERE title = '#{old_title}';")
+  end
   def initialize(url, title)
     result = Bookmark.connect.exec("INSERT INTO bookmarks VALUES(DEFAULT, '#{url}', '#{title}')")
   end

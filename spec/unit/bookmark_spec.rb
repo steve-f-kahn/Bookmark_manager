@@ -25,4 +25,9 @@ describe Bookmark do
     Bookmark.remove('BBC')
     expect{Bookmark.select('BBC')}.to raise_error "Bookmark not found"
   end
+
+  it 'Updates the database with a new title and url' do
+    Bookmark.update('http://www.bbc.co.uk/food','BBC Food', 'BBC')
+    expect(Bookmark.select('BBC Food')).to eq 'http://www.bbc.co.uk/food'
+  end
 end
